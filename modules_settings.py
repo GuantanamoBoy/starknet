@@ -542,8 +542,8 @@ async def custom_routes(account_id, key, type_account):
 
     use_modules = [deploy_argent, [send_mail_dmail, deploy_nft, deploy_token, mint_starknet_id, enable_collateral_zklend, create_collection_pyramid, mint_starkstars, swap_multiswap], [send_mail_dmail, deploy_nft, deploy_token, mint_starknet_id, enable_collateral_zklend, create_collection_pyramid, mint_starkstars, swap_multiswap, None, None, None, None, None]]
     
-    sleep_from = 4
-    sleep_to = 12
+    sleep_from = 1
+    sleep_to = 1
 
     random_module = True
 
