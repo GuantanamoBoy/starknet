@@ -457,16 +457,16 @@ async def swap_multiswap(_id, key, type_account):
 
     use_tokens = ["USDC", "DAI", "USDT"]
 
-    min_swap = 4
-    max_swap = 6
+    min_swap = 1
+    max_swap = 3
 
     sleep_from = 130
     sleep_to = 400
 
     slippage = 1
 
-    min_percent = 5
-    max_percent = 27
+    min_percent = 3
+    max_percent = 9
 
     multi = Multiswap(_id, key, type_account)
     await multi.swap(
@@ -540,7 +540,7 @@ async def custom_routes(account_id, key, type_account):
         example (send_mail, 1, 10) run this module 1 to 10 times
         """
 
-    use_modules = [deposit_zklend, [enable_collateral_zklend, disable_collateral_zklend, create_collection_pyramid, None], deposit_nostra, swap_multiswap, swap_tokens, mint_starknet_id, send_mail_dmail, [mint_starkstars, deploy_nft, deploy_token, None, None], (send_mail_dmail, 8, 15), (deposit_zklend, 2, 4), (deposit_nostra, 2, 4), (mint_starknet_id, 1, 3)]
+    use_modules = [deploy_argent, [send_mail_dmail, deploy_nft, deploy_token, mint_starknet_id, enable_collateral_zklend, create_collection_pyramid, mint_starkstars, swap_multiswap], [send_mail_dmail, deploy_nft, deploy_token, mint_starknet_id, enable_collateral_zklend, create_collection_pyramid, mint_starkstars, swap_multiswap, None, None, None, None, None]]
     
     sleep_from = 1
     sleep_to = 3
