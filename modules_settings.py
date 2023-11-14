@@ -81,9 +81,9 @@ async def swap_avnu(_id, key, type_account):
     from_token = "ETH"
     to_token = "USDT"
 
-    min_amount = 0.0001
-    max_amount = 0.0001
-    decimal = 4
+    min_amount = 0.00010868
+    max_amount = 0.00021
+    decimal = 6
     slippage = 1
 
     all_amount = True
@@ -109,12 +109,12 @@ async def swap_jediswap(_id, key, type_account):
     all_amount - swap from min_percent to max_percent
     """
 
-    from_token = "USDT"
+    from_token = "DAI"
     to_token = "ETH"
 
-    min_amount = 0.001
-    max_amount = 0.002
-    decimal = 6
+    min_amount = 0.00015
+    max_amount = 0.00032
+    decimal = 7
     slippage = 1
 
     all_amount = True
@@ -141,11 +141,11 @@ async def swap_myswap(_id, key, type_account):
     """
 
     from_token = "ETH"
-    to_token = "USDT"
+    to_token = "DAI"
 
-    min_amount = 0.001
-    max_amount = 0.002
-    decimal = 6
+    min_amount = 0.00106
+    max_amount = 0.00211
+    decimal = 7
     slippage = 1
 
     all_amount = True
@@ -174,9 +174,9 @@ async def swap_starkswap(_id, key, type_account):
     from_token = "USDT"
     to_token = "ETH"
 
-    min_amount = 0.001
-    max_amount = 0.002
-    decimal = 6
+    min_amount = 0.00103
+    max_amount = 0.00172
+    decimal = 8
     slippage = 1
 
     all_amount = True
@@ -205,8 +205,8 @@ async def swap_sithswap(_id, key, type_account):
     from_token = "USDT"
     to_token = "ETH"
 
-    min_amount = 0.001
-    max_amount = 0.002
+    min_amount = 0.00123
+    max_amount = 0.00212
     decimal = 6
     slippage = 1
 
@@ -233,12 +233,12 @@ async def swap_protoss(_id, key, type_account):
     all_amount - swap from min_percent to max_percent
     """
 
-    from_token = "USDC"
+    from_token = "ETH"
     to_token = "USDT"
 
-    min_amount = 0.03
-    max_amount = 0.03
-    decimal = 6
+    min_amount = 0.0003
+    max_amount = 0.0012
+    decimal = 7
     slippage = 1
 
     all_amount = True
@@ -264,19 +264,19 @@ async def deposit_zklend(_id, key, type_account):
 
     use_token = ["ETH"]
 
-    min_amount = 0.0001
-    max_amount = 0.0002
-    decimal = 5
+    min_amount = 0.00015
+    max_amount = 0.00025
+    decimal = 6
 
-    sleep_from = 20
-    sleep_to = 120
+    sleep_from = 15
+    sleep_to = 100
 
     make_withdraw = True
 
     all_amount = True
 
-    min_percent = 10
-    max_percent = 50
+    min_percent = 12
+    max_percent = 44
 
     zklend = ZkLend(_id, key, type_account)
     await zklend.deposit(
@@ -297,19 +297,19 @@ async def deposit_nostra(_id, key, type_account):
 
     use_token = ["ETH"]
 
-    min_amount = 0.0001
-    max_amount = 0.0002
-    decimal = 5
+    min_amount = 0.00013
+    max_amount = 0.00021
+    decimal = 7
 
-    sleep_from = 20
-    sleep_to = 120
+    sleep_from = 22
+    sleep_to = 110
 
     make_withdraw = True
 
     all_amount = True
 
-    min_percent = 10
-    max_percent = 50
+    min_percent = 11
+    max_percent = 55
 
     zklend = Nostra(_id, key, type_account)
     await zklend.deposit(
@@ -325,7 +325,7 @@ async def withdraw_zklend(_id, key, type_account):
     use_token – random choice token for withdraw ["ETH", "DAI", "USDC"], you can use only one token ["ETH"]
     """
 
-    use_token = ["ETH", "DAI", "USDC"]
+    use_token = ["ETH"]
 
     zklend = ZkLend(_id, key, type_account)
     await zklend.withdraw_all(use_token)
@@ -351,7 +351,7 @@ async def enable_collateral_zklend(_id, key, type_account):
     use_token – random choice token for withdraw ["ETH", "DAI", "USDC"], you can use only one token ["ETH"]
     """
 
-    use_token = ["ETH", "DAI", "USDC"]
+    use_token = ["ETH"]
 
     zklend = ZkLend(_id, key, type_account)
     await zklend.enable_collateral(use_token)
@@ -388,12 +388,12 @@ async def mint_starkstars(_id, key, type_account):
     ]
 
     quantity_mint_min = 1
-    quantity_mint_max = 1
+    quantity_mint_max = 3
 
     mint_all = False
 
-    sleep_from = 5
-    sleep_to = 10
+    sleep_from = 6
+    sleep_to = 12
 
     starkstars = StarkStars(_id, key, type_account)
     await starkstars.mint(contracts, quantity_mint_min, quantity_mint_max, mint_all, sleep_from, sleep_to)
@@ -406,7 +406,7 @@ async def disable_collateral_zklend(_id, key, type_account):
     use_token – random choice token ["ETH", "DAI", "USDC"], you can use only one token ["ETH"]
     """
 
-    use_token = ["DAI"]
+    use_token = ["ETH"]
 
     zklend = ZkLend(_id, key, type_account)
     await zklend.disable_collateral(use_token)
@@ -417,8 +417,8 @@ async def deploy_nft(_id, key, type_account):
     Deploy and mint NFTon StarkGuardians
     """
 
-    sleep_from = 10
-    sleep_to = 20
+    sleep_from = 13
+    sleep_to = 32
 
     stark_guardians = StarkGuardians(_id, key, type_account)
     await stark_guardians.deploy_nft(sleep_from, sleep_to)
@@ -457,16 +457,16 @@ async def swap_multiswap(_id, key, type_account):
 
     use_tokens = ["USDC", "DAI", "USDT"]
 
-    min_swap = 3
-    max_swap = 8
+    min_swap = 4
+    max_swap = 6
 
-    sleep_from = 150
-    sleep_to = 500
+    sleep_from = 130
+    sleep_to = 400
 
     slippage = 1
 
-    min_percent = 10
-    max_percent = 40
+    min_percent = 5
+    max_percent = 27
 
     multi = Multiswap(_id, key, type_account)
     await multi.swap(
@@ -483,12 +483,12 @@ async def swap_tokens(_id, key, type_account):
 
     use_dex = ["jediswap", "myswap", "10kswap", "sithswap", "protoss", "avnu"]
 
-    tokens = ["USDC", "DAI"]
+    tokens = ["USDC", "DAI", "USDT"]
 
-    sleep_from = 200
-    sleep_to = 800
+    sleep_from = 144
+    sleep_to = 777
 
-    slippage = 2
+    slippage = 1
 
     min_percent = 100
     max_percent = 100
@@ -540,8 +540,8 @@ async def custom_routes(account_id, key, type_account):
         example (send_mail, 1, 10) run this module 1 to 10 times
         """
 
-    use_modules = [deposit_zklend, deposit_nostra]
-
+    use_modules = [deposit_zklend, [enable_collateral_zklend, disable_collateral_zklend, create_collection_pyramid, None], deposit_nostra, swap_multiswap, swap_tokens, mint_starknet_id, send_mail_dmail, [mint_starkstars, deploy_nft, deploy_token, None, None], (send_mail_dmail, 8, 15), (deposit_zklend, 2, 4), (deposit_nostra, 2, 4), (mint_starknet_id, 1, 3)]
+    
     sleep_from = 1
     sleep_to = 3
 
